@@ -514,6 +514,7 @@ void run_interactive()
                 if (memory_buffer[i]) 
                     putchar(memory_buffer[i]);
             }
+            putchar('\n');
         }
         else if (input[0] == 'r' || input[0] == 'R') // Erase memory COMMAND
         {
@@ -529,7 +530,7 @@ void run_interactive()
         }
         else if (input[0] == 'p' || input[0] == 'P')
         {
-            printf("%zu:%d", cursor, BF_MEMORY_STRIP_SIZE);
+            printf("%zu:%d\n", cursor, BF_MEMORY_STRIP_SIZE);
         }
         else // Interpret 
         {
@@ -539,9 +540,8 @@ void run_interactive()
                 interpret_bf(instruction_buffer, nb_instr, &memory_buffer[0], &cursor, BF_MEMORY_STRIP_SIZE);
                 free(instruction_buffer);
             }
+            putchar('\n');
         }
-
-        printf("\n");
     }
 
 

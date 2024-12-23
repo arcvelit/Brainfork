@@ -318,7 +318,7 @@ void interpret_bf(Instruction* instruction_buffer, size_t no_instructions, byte*
                 program_counter = instruction._point_to;
                 continue;
             case OP_PRINT:
-                putchar(memory_buffer[0]);
+                putchar(memory_buffer[stack_pointer]);
                 break;
             case OP_SHIFT:
                 stack_pointer = (stack_pointer + instruction.mov + buffer_size) % buffer_size;

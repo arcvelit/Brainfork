@@ -337,6 +337,7 @@ void run_interpreter(Instruction* instruction_buffer, size_t no_instructions)
     byte memory_buffer[BF_MEMORY_STRIP_SIZE];
     memset(&memory_buffer, 0, BF_MEMORY_STRIP_SIZE);
     interpret_bf(instruction_buffer, no_instructions, &memory_buffer[0], &cursor, BF_MEMORY_STRIP_SIZE);
+    putchar('\n');
 }
 
 void run_compiler(Instruction* instruction_buffer, size_t no_instructions, const char* file_name)
